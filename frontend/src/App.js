@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Routes from './service/Routes';
 
-function App() {
+import Container from '@material-ui/core/Container';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+
+const sections = [
+  { title: 'Home', url: '/' },
+  { title: 'About', url: '/about' },
+  { title: 'Videos', url: '/videos' },
+  { title: 'Projects', url: '/projects' },
+  { title: 'Blog', url: '/blog' },
+  { title: 'Contact', url:'/contact'},
+];
+
+export default function App() {
+
+  const appProps={}
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+      <Container maxWidth="lg">
+        <Header title="Vincent Turnier" sections={sections} />
+        </Container>
+       <Routes appProps={appProps}/>
+       <Footer/>
+       </div>
   );
 }
-
-export default App;
