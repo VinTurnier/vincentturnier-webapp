@@ -9,6 +9,7 @@ import NotFound from './NotFound';
 import BlogPage from '../container/blog/BlogPage';
 import ProjectPage from '../container/project/ProjectPage';
 import HomePage from '../container/home/HomePage';
+import AboutPage from '../container/about/AboutPage';
 
 export default function Routes({appProps}) {
 
@@ -24,6 +25,8 @@ export default function Routes({appProps}) {
       <PublicRoute exact path='/' component={HomePage} appProps={appProps}/>
       <PublicRoute exact path='/blog' component={BlogPage} appProps={appProps}/>
       <PublicRoute exact path='/projects' component={ProjectPage} appProps={appProps}/>
+      <PublicRoute exact path='/about' component={AboutPage} appProps={appProps}/>
+
       <Route component={NotFound} />
     </Switch>
     </div>
