@@ -2,13 +2,13 @@ import React from 'react';
 
 //Material Ui Core
 import Grid from '@material-ui/core/Grid';
-import Divider from '@material-ui/core/Divider';
 import {makeStyles} from '@material-ui/core/styles';
 
 // Material Ui Icons
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 // About Page
 import MissionStatement from './MissionStatement';
@@ -30,21 +30,39 @@ const sidebar = {
       { title: 'March 2020', url: '#' },
       { title: 'February 2020', url: '#' },
       { title: 'January 2020', url: '#' },
-      { title: 'November 1999', url: '#' },
-      { title: 'October 1999', url: '#' },
-      { title: 'September 1999', url: '#' },
-      { title: 'August 1999', url: '#' },
-      { title: 'July 1999', url: '#' },
-      { title: 'June 1999', url: '#' },
-      { title: 'May 1999', url: '#' },
-      { title: 'April 1999', url: '#' },
     ],
     social: [
       { name: 'GitHub', icon: GitHubIcon },
-      { name: 'Twitter', icon: TwitterIcon },
-      { name: 'Facebook', icon: FacebookIcon },
+      { name: 'LinkedIn', icon: LinkedInIcon},
     ],
   };
+
+  const featuredPosts = [
+    {
+      title: 'Featured post',
+      date: 'Nov 12',
+      description:
+        'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      image: 'https://source.unsplash.com/random',
+      imageText: 'Image Text',
+    },
+    {
+        title: 'Featured post',
+        date: 'Nov 12',
+        description:
+          'This is a wider card with supporting text below as a natural lead-in to additional content.',
+        image: 'https://source.unsplash.com/random',
+        imageText: 'Image Text',
+      },
+      {
+        title: 'Featured post',
+        date: 'Nov 12',
+        description:
+          'This is a wider card with supporting text below as a natural lead-in to additional content.',
+        image: 'https://source.unsplash.com/random',
+        imageText: 'Image Text',
+      },
+]
 
 export default function AboutPage(props){
     const classes = useStyles();
@@ -54,8 +72,11 @@ export default function AboutPage(props){
             <main>
                 <MissionStatement/>
                 <Grid container spacing={5} className={classes.mainGrid}>
-                <Divider />
-                <AboutMeCard/>
+                <div style={{margin:'20px'}}>
+                    {featuredPosts.map(post=>{
+                        return <AboutMeCard post={post}/>
+                    })}
+                </div>
                 <FactsSideBar
                     title={sidebar.title}
                     description={sidebar.description}

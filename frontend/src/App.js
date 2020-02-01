@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 const sections = [
   { title: 'Home', url: '/' },
   { title: 'About', url: '/about' },
-  { title: 'Videos', url: '/videos' },
   { title: 'Projects', url: '/projects' },
   { title: 'Blog', url: '/blog' },
   { title: 'Contact', url:'/contact'},
