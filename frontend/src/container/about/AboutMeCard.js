@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     flex: 1,
   },
   cardMedia: {
-    width: 160,
+    width: 275,
   },
 });
 
@@ -37,16 +37,15 @@ export default function AboutMeCard(props) {
               <Typography variant="subtitle1" color="textSecondary">
                 {post.date}
               </Typography>
-              <Typography variant="subtitle1" paragraph>
-                {post.description}
-              </Typography>
+              {post.description}
               <Typography variant="subtitle1" color="primary">
                 Continue reading...
               </Typography>
             </CardContent>
           </div>
           <Hidden xsDown>
-            <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
+            {/* <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} /> */}
+            <img src={post.image} width={'275px'} height='200px' />
           </Hidden>
         </Card>
     </Grid>

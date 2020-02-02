@@ -40,11 +40,12 @@ export default function MissionStatement(props){
     const classes = useStyles();
     return (
         <div className={classes.heroContent}>
-          <Container maxWidth="sm">
+          <Container maxWidth="sm" >
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
+            "Do not follow where the path may lead. Go instead where there is no path and leave a trail."
+            </Typography>
+            <Typography variant="h6" color="textSecondary" paragraph style={{fontWeight:"bold"}}>
+                - Ralph Waldo Emerson
             </Typography>
           </Container>
         </div>
