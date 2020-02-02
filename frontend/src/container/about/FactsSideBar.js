@@ -21,13 +21,14 @@ export default function FactsSideBar(props) {
   const { archives, description, social, title } = props;
 
   return (
-    <Grid item xs={12} md={3}>
+    <Grid item xs={12} sm={3}>
       <Paper elevation={0} className={classes.sidebarAboutBox}>
         <Typography variant="h6" gutterBottom>
           {title}
         </Typography>
         <Typography>{description}</Typography>
       </Paper>
+      <div style={{margin:'20px'}}>
       <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
         Archives
       </Typography>
@@ -40,7 +41,7 @@ export default function FactsSideBar(props) {
         Social
       </Typography>
       {social.map(network => (
-        <Link display="block" variant="body1" href={network.link} key={network} >
+        <Link display="block" variant="body1" href={network.link} key={network}>
           <Grid container direction="row" spacing={1} alignItems="center">
             <Grid item>
               <network.icon />
@@ -49,6 +50,7 @@ export default function FactsSideBar(props) {
           </Grid>
         </Link>
       ))}
+      </div>
     </Grid>
   );
 }

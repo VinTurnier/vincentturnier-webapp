@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
@@ -18,7 +17,10 @@ const useStyles = makeStyles({
     flex: 1,
   },
   cardMedia: {
-    width: 275,
+    width: 175,
+    // height: 175,
+    // justifyContent: 'center',
+    // alignContent: 'center',
   },
 });
 
@@ -44,8 +46,8 @@ export default function AboutMeCard(props) {
             </CardContent>
           </div>
           <Hidden xsDown>
-            {/* <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} /> */}
-            <img src={post.image} width={'275px'} height='200px' />
+            <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
+            {/* <img src={post.image} width={'250px'} height='62.5px' style={{padding:'10px'}} /> */}
           </Hidden>
         </Card>
     </Grid>

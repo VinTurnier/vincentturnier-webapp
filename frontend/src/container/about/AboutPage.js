@@ -6,8 +6,6 @@ import {makeStyles} from '@material-ui/core/styles';
 
 // Material Ui Icons
 import GitHubIcon from '@material-ui/icons/GitHub';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 // About Page
@@ -29,6 +27,7 @@ const sidebar = {
             <li><b>University: </b>University of Connecticut</li>
             <li><b>Graduated: </b>May 2019</li>
             <li><b>Interest: </b>Beekeeping & Music</li>
+            <li><b>Language: </b>English, French, Haitian Creole</li>
         </ul>
         </p>
 
@@ -48,7 +47,7 @@ const sidebar = {
     {
       title: 'Software Engineer | StrongArm Technology',
       date: 'August 2019 - Present',
-      description:(<p style={{}}>
+      description:(<p style={{fontFamily: 'Times New Roman, sans-serif'}}>
         <ul>
               <li>
                   Build the SAT ORM (StrongArm Technologies Object Relational Mappers) <br/>
@@ -58,8 +57,8 @@ const sidebar = {
               <br/>
               <li>
                   Modify API endpoints to use the SAT ORM package, which condenses<br/> 
-                  scripts of about 150 lines of code to approximately 30 on average, <br/>
-                  in order to make endpoints easier to read & maintain.
+                  scripts of about <b>150 lines of code to approximately 30</b> on average, <br/>
+                  in order to make endpoints easier to <b>read, test & maintain</b>.
               </li>
               <br/>
               <li>
@@ -76,17 +75,48 @@ const sidebar = {
     {
         title: 'Software Engineer Intern | Pratt & Whitney',
         date: 'May 2018 - August 2018',
-        description:
-          'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'https://source.unsplash.com/random',
+        description:(<p style={{fontFamily: 'Times New Roman, sans-serif'}}>
+            <ul>
+              <li>
+                Accelerate the certification process of the PW1500G/PW1900G by<br/> 
+                creating and running <b>python</b> scripts through Failure Mode Effect<br/>  
+                Analysis (FMEA) documents to identify errors and redundancies.
+              </li>
+              <br/>
+              <li>
+                Support the creation of a new Failure Mode Effect Critical Analysis<br/> 
+                (FMECA) <b>database</b> made up of probable failure modes, which is<br/> 
+                critical to the standardization of the FMEA process.
+              </li>
+        </ul>
+        </p>
+        ),
+        image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/Pratt_%26_Whitney_UTC_logo.svg.png',
         imageText: 'Image Text',
       },
       {
         title: 'Structural Engineer Intern | Pratt & Whitney',
         date: 'May 2017 - August 2017',
-        description:
-          'This is a wider card with supporting text below as a natural lead-in to additional content.',
-        image: 'https://source.unsplash.com/random',
+        description:(<p style={{fontFamily: 'Times New Roman, sans-serif'}}>
+            <ul>
+                <li>
+                    Over see quality control of jet engine blade and vein inventories<br/> 
+                    to ensure compliance with PW standards for compression systems.
+                </li>
+                <br/>
+                <li>
+                    Visit outsourced production plants to advise the qualitystandards<br/> 
+                    for the fabrication of jet engine blades and veins.
+                </li>
+                <br/>
+                <li>
+                    Propose new solutions for frequent part defects and production<br/> 
+                    errors to management.
+                </li>
+            </ul>
+        </p>
+        ),
+        image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/Pratt_%26_Whitney_UTC_logo.svg.png',
         imageText: 'Image Text',
       },
 ]
@@ -99,7 +129,7 @@ export default function AboutPage(props){
             <main>
                 <MissionStatement/>
                 <Grid container spacing={5} className={classes.mainGrid}>
-                <div style={{margin:'20px'}}>
+                <div style={{margin:'00px'}}>
                     {featuredPosts.map(post=>{
                         return <AboutMeCard post={post}/>
                     })}

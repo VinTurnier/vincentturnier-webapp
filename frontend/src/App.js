@@ -24,7 +24,7 @@ export default function App() {
   return (
     <div>
       <Container maxWidth="lg">
-        <Header title="Vincent Turnier" sections={sections} />
+        <Header title="| Vincent Turnier | " sections={sections} />
         </Container>
        <Routes appProps={appProps}/>
        <Footer/>
