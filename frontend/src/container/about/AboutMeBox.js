@@ -17,8 +17,8 @@ const useStyles = makeStyles({
     flex: 1,
   },
   cardMedia: {
-    width: 250,
-    // height: 175,
+    width: 350,
+    height: 350,
     // justifyContent: 'center',
     // alignContent: 'center',
   },
@@ -27,10 +27,13 @@ const useStyles = makeStyles({
 export default function AboutMeCard(props) {
   const classes = useStyles();
   const { post } = props;
-
-  return (
-    <Grid item xs={12} md={12}>
-        <Card className={classes.card}>
+    return (
+        <Grid item xs={12} md={12}>
+        <Card className={classes.card} elevation={2}>
+        <Hidden xsDown>
+            <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
+      
+          </Hidden>
           <div className={classes.cardDetails}>
             <CardContent>
               <Typography component="h2" variant="h5">
@@ -40,20 +43,10 @@ export default function AboutMeCard(props) {
                 {post.date}
               </Typography>
               {post.description}
-              <Typography variant="subtitle1" color="primary">
-                Continue reading...
-              </Typography>
             </CardContent>
           </div>
-          <Hidden xsDown>
-            <CardMedia className={classes.cardMedia} image={post.image} title={post.imageTitle} />
-            {/* <img src={post.image} width={'250px'} height='62.5px' style={{padding:'10px'}} /> */}
-          </Hidden>
+          
         </Card>
     </Grid>
-  );
-}
-
-AboutMeCard.propTypes = {
-  post: PropTypes.object,
+    );
 };

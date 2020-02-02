@@ -9,9 +9,11 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 // About Page
-import MissionStatement from './MissionStatement';
+import QuoteCard from '../../components/QuoteCard';
 import FactsSideBar from './FactsSideBar';
 import AboutMeCard from './AboutMeCard';
+import AboutMeBox from './AboutMeBox';
+import { Divider, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     mainGrid: {
@@ -47,7 +49,7 @@ const sidebar = {
     {
       title: 'Software Engineer | StrongArm Technology',
       date: 'August 2019 - Present',
-      description:(<p style={{fontFamily: 'Times New Roman, sans-serif'}}>
+      description:(<p style={{fontFamily: 'Arial, sans-serif', letterSpacing: '1px'}}>
         <ul>
               <li>
                   Build the SAT ORM (StrongArm Technologies Object Relational Mappers) <br/>
@@ -69,13 +71,13 @@ const sidebar = {
         </ul>
     </p>)
        ,
-      image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/SHA-Portfolio-StrongArmTech.png',
+      image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/strongarm-tech-about-page.jpg',
       imageText: 'Image Text',
     },
     {
         title: 'Software Engineer Intern | Pratt & Whitney',
         date: 'May 2018 - August 2018',
-        description:(<p style={{fontFamily: 'Times New Roman, sans-serif'}}>
+        description:(<p style={{fontFamily: 'Arial, sans-serif', letterSpacing: '1px'}}>
             <ul>
               <li>
                 Accelerate the certification process of the PW1500G/PW1900G by<br/> 
@@ -91,13 +93,13 @@ const sidebar = {
         </ul>
         </p>
         ),
-        image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/Pratt_%26_Whitney_UTC_logo.svg.png',
+        image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/Pratt-%26-Whitney-about-page.jpg',
         imageText: 'Image Text',
       },
       {
         title: 'Structural Engineer Intern | Pratt & Whitney',
         date: 'May 2017 - August 2017',
-        description:(<p style={{fontFamily: 'Times New Roman, sans-serif'}}>
+        description:(<p style={{fontFamily: 'Arial, sans-serif', letterSpacing: '1px'}}>
             <ul>
                 <li>
                     Over see quality control of jet engine blade and vein inventories<br/> 
@@ -116,10 +118,49 @@ const sidebar = {
             </ul>
         </p>
         ),
-        image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/Pratt_%26_Whitney_UTC_logo.svg.png',
+        image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/PW4000-94-about-page.jpg',
         imageText: 'Image Text',
       },
 ]
+
+const aboutMeBox =  {
+    title:"A Little About Me",
+    date: "",
+    description: (
+        <p style={{fontFamily: 'Arial, sans-serif', letterSpacing: '1px'}}>
+            <li style={{listStyle: 'none'}}>
+            My friends call me a software engineer, developer, programmer or<br/> 
+            hacker, but the truth is I just love solving problems and I really<br/> 
+            like computers. I love working on open source projects and always<br/> 
+            strive to learn more about data, webapps, mobile apps, and infrastructure.<br/>
+            </li>
+            <br/>
+            <li style={{listStyle: 'none'}}>
+            The goal is to build, test, ship, maintain and repeat. I pride myself<br/> 
+            on writing reusable code and publishing good documentation. I enjoy<br/> 
+            taking the time to teach others as well to always make sure the team<br/> 
+            is on the same page and has a general knowledge on what is being built.<br/> 
+            I love collaborating with people who have a good time  programming<br/> 
+            as much or even more than I do.<br/> 
+            </li>
+            <br/>
+            <li style={{listStyle: 'none'}}>
+            Some of the Projects that I have worked on include image recognition<br/> 
+            to help people identified duplicate image and news propaganda, an<br/> 
+            inventory management system for gas stations, an event management system, and<br/> 
+            lastly web scraping of certain financial websites. 
+            </li>
+            <br/>
+        </p>
+    ),
+    image: "https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/vincent-turnier-profile-picture.JPG",
+    imageText: "Vinny Logo",
+}
+
+const quote = {
+    text: "Do not follow where the path may lead. Go instead where there is no path and leave a trail.",
+    author: "Ralph Waldo Emerson"
+}
 
 export default function AboutPage(props){
     const classes = useStyles();
@@ -127,7 +168,11 @@ export default function AboutPage(props){
     return(
         <div>
             <main>
-                <MissionStatement/>
+                <AboutMeBox post={aboutMeBox}/>
+                {/* <Typography>
+                    Experience
+                </Typography>
+                <Divider/> */}
                 <Grid container spacing={5} className={classes.mainGrid}>
                 <div style={{margin:'00px'}}>
                     {featuredPosts.map(post=>{
@@ -141,6 +186,7 @@ export default function AboutPage(props){
                     social={sidebar.social}
                 />
             </Grid>
+            <QuoteCard text={quote.text} author={quote.author}/>
             </main>
         </div>
     )
