@@ -10,7 +10,7 @@ const mainFeaturedPost = {
       "",
     image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/0.jpg',
     imgText: 'main image description',
-    linkText: 'Continue reading…',
+    linkText: '',
   };
 
 const quote = {
