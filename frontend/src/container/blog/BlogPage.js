@@ -11,10 +11,6 @@ import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
 
-import post1 from './blog-post.1.md';
-import post2 from './blog-post.2.md';
-import post3 from './blog-post.3.md';
-
 const useStyles = makeStyles(theme => ({
   mainGrid: {
     marginTop: theme.spacing(3),
@@ -23,34 +19,35 @@ const useStyles = makeStyles(theme => ({
 
 
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: 'Welcome to my Blog',
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-  image: 'https://source.unsplash.com/random',
+    "Welcome, read more to learn about me!",
+  image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/0.jpg',
   imgText: 'main image description',
   linkText: 'Continue reading…',
 };
 
 const featuredPosts = [
   {
-    title: 'Featured post',
-    date: 'Nov 12',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
-    imageText: 'Image Text',
-  },
-  {
-    title: 'Post title',
+    title: 'Gas Monitoring System',
     date: 'Nov 11',
     description:
       'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
+    image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/gms-inventory-screen-shot.png',
     imageText: 'Image Text',
+    link: "/blog#Gas-Monitoring-System",
   },
+  {
+    title: 'IPT',
+    date: 'Dec 12',
+    description:
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+    image: 'https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/ipt-twilio-api-for-whatsapp.png',
+    imageText: 'Image Text',
+    link: "/blog#IPT",
+  }
+  
 ];
-
-const posts = [post1, post2, post3];
 
 const sidebar = {
   title: 'Some Comman Fact',
@@ -60,19 +57,11 @@ const sidebar = {
     { title: 'March 2020', url: '#' },
     { title: 'February 2020', url: '#' },
     { title: 'January 2020', url: '#' },
-    { title: 'November 1999', url: '#' },
-    { title: 'October 1999', url: '#' },
-    { title: 'September 1999', url: '#' },
-    { title: 'August 1999', url: '#' },
-    { title: 'July 1999', url: '#' },
-    { title: 'June 1999', url: '#' },
-    { title: 'May 1999', url: '#' },
-    { title: 'April 1999', url: '#' },
+    { title: 'December 2019', url: '#' },
+    { title: 'November 2019', url: '#' },
   ],
   social: [
-    { name: 'GitHub', icon: GitHubIcon },
-    { name: 'Twitter', icon: TwitterIcon },
-    { name: 'Facebook', icon: FacebookIcon },
+    { name: 'GitHub', icon: GitHubIcon, link: "http://www.github.com/vinTurnier" },
   ],
 };
 
@@ -91,7 +80,7 @@ export default function BlogPage() {
             ))}
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Main title="From the firehose" posts={posts} />
+            <Main title="From the firehose"/>
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}

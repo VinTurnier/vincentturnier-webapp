@@ -9,7 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import Link from '@material-ui/core/Link';
 import QuoteCard from '../../components/QuoteCard';
 
 // function Copyright() {
@@ -68,14 +68,14 @@ const projects = [
     header: "IPT",
     text: "Information for all or IPT, helps people identify old images used for propaganda using twilio.",
     githubLink: "https://github.com/VinTurnier/ipt-api",
-    blogLink: "",
+    blogLink: "/blog#IPT",
     imageLink: "https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/ipt-twilio-api-for-whatsapp.png"
   },
   {
     header: "GMS",
     text: "Gas Monitoring System or GMS is a inventory management system for gas stations.",
-    githubLink: "",
-    blogLink: "",
+    githubLink: "https://app.gmsdashboard.com",
+    blogLink: "/blog#Gas-Monitoring-System",
     imageLink: "https://vincentturnier-webapp-bucket.s3.us-east-2.amazonaws.com/webapp-company-logos/gms-inventory-screen-shot.png"
   },
   {
@@ -108,7 +108,7 @@ const projects = [
   },
   
 ]
-export default function Album() {
+export default function ProjectPage() {
   const classes = useStyles();
 
   const goToGithub=(url)=>{
@@ -142,10 +142,13 @@ export default function Album() {
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary" onClick={()=>goToGithub(card.githubLink)}>
-                      Github
+                      View
                     </Button>
+                    
                     <Button size="small" color="primary">
+                    <Link href={card.blogLink}>
                       Blog
+                    </Link>
                     </Button>
                   </CardActions>
                 </Card>

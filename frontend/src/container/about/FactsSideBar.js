@@ -33,7 +33,7 @@ export default function FactsSideBar(props) {
         Social
       </Typography>
       {social.map(network => (
-        <Link display="block" variant="body1" href={network.link} key={network}>
+        <Link display="block" variant="body1" href={network.link} target="_blank" key={network}>
           <Grid container direction="row" spacing={1} alignItems="center">
             <Grid item>
               <network.icon />
